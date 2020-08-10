@@ -15,8 +15,8 @@ import cv2
 def DrowsinessDetectorMain(pathOfPredictor, WebcamIndex, pathOfSound):
 
 	#Threshold constants required to define: 
-	eyeArThreshold = 0.3
-	eyeArConsecFrames = 48
+	eyeArThreshold = 0.25
+	eyeArConsecFrames = 45
 
 	def sound_alarm( pathOfSound ):
 		playsound.playsound(pathOfSound)
@@ -125,9 +125,9 @@ def DrowsinessDetectorMain(pathOfPredictor, WebcamIndex, pathOfSound):
 					# and if so, start a thread to have the alarm
 					# sound played in the background
 					if pathOfSound != "":
-						print(pathOfSound)
+						# print(pathOfSound)
 						t = Thread(target= sound_alarm, args=(pathOfSound,))
-						t.deamon = True
+						t.daemon = True
 						t.start()
 
 					# draw an alarm on the frame

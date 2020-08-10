@@ -20,8 +20,8 @@ import playsound
 import argparse
 
 #Threshold constants required to define: 
-eyeArThreshold = 0.3
-eyeArConsecFrames = 48
+eyeArThreshold = 0.25
+eyeArConsecFrames = 45
 pathOfPredictor = "shape_predictor_68_face_landmarks.dat"
 WebcamIndex = 0
 pathOfSound = "alarm.wav"
